@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank Adapter API</title>
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Adapter Bank API</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
+        aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a id="bank-one-btn" class="nav-link" href="#">Bank One<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a id="bank-two-btn" class="nav-link" href="#">Bank Two</a>
+          </li>
+          <li class="nav-item">
+            <a id="info-btn" class="nav-link" href="#">Information</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="alert alert-dismissible alert-info w-100">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h4 class="alert-heading">¡Accion completada!</h4>
+        <p class="mb-0">Se realizo la accion</p>
+      </div>
+    </div>
+  </div>
+  <div id="bank-one" class="container-fluid py-4 d-none animate__animated animate__fadeIn">
+    <div class="jumbotron" style="background-color: white; border-style: solid; border-width: 1px; border-color: #ccc;">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="display-4">Bank One</h1>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="display-5">Verify Client Info</h2>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label class="col-form-label" for="inputDefault">Name:</label>
+            <input type="text" class="form-control" placeholder="Carlos" id="nameInput">
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label class="col-form-label" for="inputDefault">Debt:</label>
+            <input type="text" class="form-control" placeholder="400" id="debtInput">
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label class="col-form-label" for="inputDefault">Founds:</label>
+            <input type="text" class="form-control" placeholder="300" id="foundsInput">
+          </div>
+        </div>
+        <div class="col-md-3 d-flex align-items-end pb-3">
+          <button id="btnVerify" type="button" class="btn btn-primary btn-block">Verify</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h2 class="display-5">Clients</h2>
+          <hr>
+          <div class="row" id="list-clients">
+
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h2 class="display-5">Info Bank</h2>
+          <hr>
+          <div class="list-group">
+            <a href="#" id="data-name" class="list-group-item list-group-item-action"></a>
+            <a href="#" id="data-totalClients" class="list-group-item list-group-item-action"></a>
+            <a href="#" id="data-totalFounds" class="list-group-item list-group-item-action"></a>
+            <a href="#" id="data-year" class="list-group-item list-group-item-action"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="bank-two" class="container-fluid py-4 d-block animate__animated animate__fadeIn">
+    <div class="jumbotron" style="background-color: white; border-style: solid; border-width: 1px; border-color: #ccc;">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="display-4">Bank Two</h1>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="display-5">Verify Client Info</h2>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label class="col-form-label" for="inputDefault">Name:</label>
+            <input type="text" class="form-control" placeholder="Carlos" id="nameInput2">
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label class="col-form-label" for="inputDefault">Debt:</label>
+            <input type="text" class="form-control" placeholder="400" id="debtInput2">
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label class="col-form-label" for="inputDefault">Founds:</label>
+            <input type="text" class="form-control" placeholder="300" id="foundsInput2">
+          </div>
+        </div>
+        <div class="col-md-3 d-flex align-items-end pb-3">
+          <button id="btnVerify2" type="button" class="btn btn-primary btn-block">Verify</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h2 class="display-5">Clients</h2>
+          <hr>
+          <div class="row" id="list-clients2">
+
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h2 class="display-5">Info Bank</h2>
+          <hr>
+          <div class="list-group">
+            <a href="#" id="data-name2" class="list-group-item list-group-item-action"></a>
+            <a href="#" id="data-totalClients2" class="list-group-item list-group-item-action"></a>
+            <a href="#" id="data-totalFounds2" class="list-group-item list-group-item-action"></a>
+            <a href="#" id="data-year2" class="list-group-item list-group-item-action"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="information" class="container-fluid py-4 d-block animate__animated animate__fadeIn">
+    <div class="jumbotron" style="background-color: white; border-style: solid; border-width: 1px; border-color: #ccc;">
+      <h1 class="display-3">ADAPTER BANK API</h1>
+      <p class="lead">This is a simple example using a Desing Pattern Adapter for two API of banks.</p>
+      <hr class="my-4">
+      <p>Develop by Carlos Rodriguez Lazo with TypeScript</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="https://github.com/CarlosM0905" target="_blank" role="button">Github</a>
+      </p>
+    </div>
+  </div>
+</body>
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+  integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+  integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script type="module" src="../index.js"></script>
+
+</html>
